@@ -7,5 +7,16 @@
     <fragment android:id="@+id/mainFragment"
               android:name="com.temporaryname.bastienfalcou.testnavigation.MainFragment"
               android:label="fragment_main"
-              tools:layout="@layout/fragment_main"/>
+              tools:layout="@layout/fragment_main">
+        <action android:id="@+id/toSignUpFragment"
+                app:destination="@id/signUpFragment2"/>
+        <action android:id="@+id/toSignInFragment"
+                app:destination="@id/signInFragment3"/>
+    </fragment>
+    <fragment android:id="@+id/signUpFragment2"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.SignUpFragment"
+              android:label="fragment_sign_up" tools:layout="@layout/fragment_sign_up"/>
+    <fragment android:id="@+id/signInFragment3"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.SignInFragment"
+              android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in"/>
 </navigation>
