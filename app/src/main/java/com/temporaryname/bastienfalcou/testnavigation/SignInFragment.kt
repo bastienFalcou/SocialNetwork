@@ -21,7 +21,7 @@ class SignInFragment: Fragment() {
 
         nextButton.setOnClickListener {
             var nameBundle = Bundle()
-            nameBundle.putString("nameArgument", theNameTextView.text.toString())
+            nameBundle.putString("nameArgument", emailText.text.toString())
             it.findNavController().navigate(R.id.toHomeScreenFragment, nameBundle)
         }
     }
