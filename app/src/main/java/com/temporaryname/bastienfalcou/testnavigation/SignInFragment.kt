@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 
 class SignInFragment: Fragment() {
@@ -21,7 +22,7 @@ class SignInFragment: Fragment() {
 
         nextButton.setOnClickListener {
             var nameBundle = Bundle()
-            nameBundle.putString("nameArgument", theNameTextView.text.toString())
+            nameBundle.putString("nameArgument", emailText.text.toString())
             it.findNavController().navigate(R.id.toHomeScreenFragment, nameBundle)
         }
     }

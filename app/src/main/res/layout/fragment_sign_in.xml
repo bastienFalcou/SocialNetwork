@@ -8,21 +8,50 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/theNameTextView"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/nextButton" app:layout_constraintVertical_chainStyle="packed"/>
     <Button
             android:text="NEXT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nextButton" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/theNameTextView"/>
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/passwordText"
+    />
+    <TextView
+            android:text="Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="156dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Email"
+            android:ems="10"
+            android:id="@+id/emailText" android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/emailText" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+    />
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/passwordText"
+            app:layout_constraintStart_toStartOf="@+id/emailText" app:layout_constraintEnd_toEndOf="@+id/emailText"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView4"
+    />
+    <android.support.constraint.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:id="@+id/group"
+                                      app:constraint_referenced_ids="emailText,textView5,passwordText,nextButton,textView4"/>
 </android.support.constraint.ConstraintLayout>
