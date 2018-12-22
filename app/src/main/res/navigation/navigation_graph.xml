@@ -19,5 +19,10 @@
     <fragment android:id="@+id/signInFragment3"
               android:name="com.temporaryname.bastienfalcou.testnavigation.SignInFragment"
               android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in">
+        <action android:id="@+id/toHomeScreenFragment"
+                app:destination="@id/homeScreenFragment"/>
     </fragment>
+    <fragment android:id="@+id/homeScreenFragment"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.HomeScreenFragment"
+              android:label="fragment_home_screen" tools:layout="@layout/fragment_home_screen"/>
 </navigation>
