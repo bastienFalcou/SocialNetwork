@@ -18,5 +18,6 @@
               android:label="fragment_sign_up" tools:layout="@layout/fragment_sign_up"/>
     <fragment android:id="@+id/signInFragment3"
               android:name="com.temporaryname.bastienfalcou.testnavigation.SignInFragment"
-              android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in"/>
+              android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in">
+    </fragment>
 </navigation>
