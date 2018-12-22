@@ -33,4 +33,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha01"
     implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-alpha01"
+    implementation 'com.github.kittinunf.fuel:fuel:1.16.0'
+    implementation 'com.github.kittinunf.fuel:fuel-coroutines:1.16.0'
+    implementation 'com.github.kittinunf.fuel:fuel-android:1.16.0'
 }
