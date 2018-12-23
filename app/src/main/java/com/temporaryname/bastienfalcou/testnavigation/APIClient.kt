@@ -5,15 +5,20 @@ import com.github.kittinunf.fuel.core.interceptors.cUrlLoggingRequestInterceptor
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 
+private const val API_KEY = "946f7b3931c2d9b16795a35515da4c8b"
+private const val EXTRAS = "url_sq"
+private const val FORMAT = "json"
+private const val TIMOUT_MILLISECONDS = 60000
+
 object APIClient {
     init {
         FuelManager.instance.basePath = "https://api.flickr.com/services/rest"
         FuelManager.instance.addRequestInterceptor(cUrlLoggingRequestInterceptor())
-        FuelManager.instance.timeoutInMillisecond = 60000
+        FuelManager.instance.timeoutInMillisecond = TIMOUT_MILLISECONDS
         FuelManager.instance.baseParams = listOf(
-            "api_key" to "946f7b3931c2d9b16795a35515da4c8b",
-            "extras" to "url_sq",
-            "format" to "json",
+            "api_key" to API_KEY,
+            "extras" to EXTRAS,
+            "format" to FORMAT,
             "nojsoncallback" to 1
         )
     }
