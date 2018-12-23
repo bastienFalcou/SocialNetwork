@@ -15,12 +15,6 @@ object APIClient {
         FuelManager.instance.basePath = "https://api.flickr.com/services/rest"
         FuelManager.instance.addRequestInterceptor(cUrlLoggingRequestInterceptor())
         FuelManager.instance.timeoutInMillisecond = TIMOUT_MILLISECONDS
-        FuelManager.instance.baseParams = listOf(
-            "api_key" to API_KEY,
-            "extras" to EXTRAS,
-            "format" to FORMAT,
-            "nojsoncallback" to 1
-        )
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
@@ -28,6 +22,10 @@ object APIClient {
         {
             "method": "flickr.photos.search",
             "text": "horror",
+            "api_key": ${API_KEY},
+            "extras": ${EXTRAS},
+            "format": ${FORMAT},
+            "nojsoncallback": 1
         }
         """
 
