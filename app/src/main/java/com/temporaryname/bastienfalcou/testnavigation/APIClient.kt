@@ -15,7 +15,7 @@ object APIClient {
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        print(ex)
+                        println("Error API: " + ex)
                     }
                     is Result.Success -> {
                         val data = result.get()
