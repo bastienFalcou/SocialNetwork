@@ -1,12 +1,14 @@
 package com.temporaryname.bastienfalcou.testnavigation
 
 import com.github.kittinunf.fuel.core.FuelManager
+import com.github.kittinunf.fuel.core.interceptors.cUrlLoggingRequestInterceptor
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 
 object APIClient {
     init {
         FuelManager.instance.basePath = "https://api.flickr.com/services/rest"
+        FuelManager.instance.addRequestInterceptor(cUrlLoggingRequestInterceptor())
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
