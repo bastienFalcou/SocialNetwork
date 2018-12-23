@@ -1,7 +1,8 @@
-package com.temporaryname.bastienfalcou.testnavigation
+package com.temporaryname.bastienfalcou.testnavigation.Fragment
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.temporaryname.bastienfalcou.testnavigation.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

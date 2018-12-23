@@ -1,4 +1,4 @@
-package com.temporaryname.bastienfalcou.testnavigation
+package com.temporaryname.bastienfalcou.testnavigation.Networking
 
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.core.interceptors.cUrlLoggingRequestInterceptor
@@ -14,7 +14,8 @@ object APIClient {
     init {
         FuelManager.instance.basePath = "https://api.flickr.com/services/rest"
         FuelManager.instance.addRequestInterceptor(cUrlLoggingRequestInterceptor())
-        FuelManager.instance.timeoutInMillisecond = TIMOUT_MILLISECONDS
+        FuelManager.instance.timeoutInMillisecond =
+                TIMOUT_MILLISECONDS
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
@@ -22,9 +23,9 @@ object APIClient {
         {
             "method": "flickr.photos.search",
             "text": "horror",
-            "api_key": ${API_KEY},
-            "extras": ${EXTRAS},
-            "format": ${FORMAT},
+            "api_key": $API_KEY,
+            "extras": $EXTRAS,
+            "format": $FORMAT,
             "nojsoncallback": 1
         }
         """
