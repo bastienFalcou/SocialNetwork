@@ -19,7 +19,7 @@ object APIClient {
                     }
                     is Result.Success -> {
                         val data = result.get()
-                        print(data)
+                        completion(data)
                     }
                 }
         }
