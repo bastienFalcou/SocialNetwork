@@ -13,9 +13,12 @@ private const val TIMOUT_MILLISECONDS = 60000
 object APIClient {
     init {
         FuelManager.instance.basePath = "https://api.flickr.com/services/rest"
+        FuelManager.instance.baseHeaders = mapOf(
+            "Accept" to "application/json",
+            "Content-Type" to "application/json"
+        )
         FuelManager.instance.addRequestInterceptor(cUrlLoggingRequestInterceptor())
-        FuelManager.instance.timeoutInMillisecond =
-                TIMOUT_MILLISECONDS
+        FuelManager.instance.timeoutInMillisecond = TIMOUT_MILLISECONDS
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
