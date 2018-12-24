@@ -18,8 +18,6 @@ class HomeScreenFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        println("coucou")
-
         nameTextView.setText(arguments?.getString("nameArgument"))
 
         APIClient.fetchMovies { print(it) }
