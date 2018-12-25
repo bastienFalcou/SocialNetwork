@@ -4,6 +4,7 @@ import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.core.interceptors.cUrlLoggingRequestInterceptor
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
+import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 
 private const val API_KEY = "946f7b3931c2d9b16795a35515da4c8b"
 private const val EXTRAS = "url_sq"
@@ -31,7 +32,7 @@ object APIClient {
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
-        "/".httpGet().responseString { request, response, result ->
+        "/".httpGet().responseObject(Movie.Deserializer()) { request, response, result ->
             when (result) {
                 is Result.Failure -> {
                     val ex = result.getException()
@@ -39,7 +40,7 @@ object APIClient {
                 }
                 is Result.Success -> {
                     val data = result.get()
-                    completion(data)
+                    completion(data.toString())
                 }
             }
         }

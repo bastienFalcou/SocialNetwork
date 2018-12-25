@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.fragment_home_screen.*
 
 class HomeScreenFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home_screen, container, false)
     }
 

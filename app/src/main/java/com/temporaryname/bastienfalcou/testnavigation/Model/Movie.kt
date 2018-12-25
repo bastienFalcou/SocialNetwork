@@ -9,6 +9,8 @@ data class Movie(val id: String,
                  val isPublic: Boolean,
                  var urlString: String) {
     class Deserializer: ResponseDeserializable<Array<Movie>> {
-        override fun deserialize(content: String): Array<Movie>? = Gson().fromJson(content, Array<Movie>::class.java)
+        override fun deserialize(content: String): Array<Movie>? {
+            return Gson().fromJson(content, Array<Movie>::class.java)
+        }
     }
 }
