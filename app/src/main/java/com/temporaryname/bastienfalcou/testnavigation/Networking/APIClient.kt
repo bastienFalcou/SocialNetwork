@@ -32,7 +32,7 @@ object APIClient {
     }
 
     fun fetchMovies(completion: (String) -> Unit) {
-        "/".httpGet().responseObject(Movie.Deserializer()) { request, response, result ->
+        "/".httpGet().responseObject(Movie.Deserializer()) { _, _, result ->
             when (result) {
                 is Result.Failure -> {
                     val ex = result.getException()
