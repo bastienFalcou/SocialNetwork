@@ -2,9 +2,6 @@ package com.temporaryname.bastienfalcou.testnavigation.Networking
 
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.core.interceptors.cUrlLoggingRequestInterceptor
-import com.github.kittinunf.fuel.httpGet
-import com.github.kittinunf.result.Result
-import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 
 private const val API_KEY = "946f7b3931c2d9b16795a35515da4c8b"
 private const val EXTRAS = "url_sq"
@@ -31,18 +28,7 @@ object APIClient {
         FuelManager.instance.timeoutInMillisecond = TIMOUT_MILLISECONDS
     }
 
-    fun fetchMovies(completion: (String) -> Unit) {
-        "/".httpGet().responseObject(Movie.Deserializer()) { _, _, result ->
-            when (result) {
-                is Result.Failure -> {
-                    val ex = result.getException()
-                    println("Error API: " + ex)
-                }
-                is Result.Success -> {
-                    val data = result.get()
-                    completion(data.toString())
-                }
-            }
-        }
+    fun start() {
+        println("The APIClient has started")
     }
 }

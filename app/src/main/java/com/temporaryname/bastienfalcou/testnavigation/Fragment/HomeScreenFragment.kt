@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 import com.temporaryname.bastienfalcou.testnavigation.Networking.APIClient
+import com.temporaryname.bastienfalcou.testnavigation.Networking.ModelAPI.fetchMovies
 import com.temporaryname.bastienfalcou.testnavigation.R
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 
@@ -17,8 +19,9 @@ class HomeScreenFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        nameTextView.setText(arguments?.getString("nameArgument"))
+        nameTextView.text = arguments?.getString("nameArgument")
 
-        APIClient.fetchMovies { print(it) }
+        APIClient.start()
+        Movie.fetchMovies { print(it) }
     }
 }

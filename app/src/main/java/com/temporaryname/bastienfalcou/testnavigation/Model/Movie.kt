@@ -9,6 +9,8 @@ data class Movie(val id: String,
                  val title: String,
                  val isPublic: Boolean,
                  var urlString: String) {
+    companion object {}
+
     class Deserializer: ResponseDeserializable<Array<Movie>> {
         override fun deserialize(content: String): Array<Movie>? {
             val json = JSONObject(content)
