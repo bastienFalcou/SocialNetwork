@@ -21,7 +21,12 @@ class HomeScreenFragment: Fragment() {
 
         nameTextView.text = arguments?.getString("nameArgument")
 
-        APIClient.start()
-        Movie.fetchMovies { print(it) }
+        Movie.fetchMovies { movies, error ->
+            if (movies != null) {
+                println(movies)
+            } else {
+                println(error)
+            }
+        }
     }
 }
