@@ -5,7 +5,7 @@
             app:startDestination="@id/mainFragment">
 
     <fragment android:id="@+id/mainFragment"
-              android:name="com.temporaryname.bastienfalcou.testnavigation.MainFragment"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.MainFragment"
               android:label="fragment_main"
               tools:layout="@layout/fragment_main">
         <action android:id="@+id/toSignUpFragment"
@@ -14,16 +14,16 @@
                 app:destination="@id/signInFragment3"/>
     </fragment>
     <fragment android:id="@+id/signUpFragment2"
-              android:name="com.temporaryname.bastienfalcou.testnavigation.SignUpFragment"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.SignUpFragment"
               android:label="fragment_sign_up" tools:layout="@layout/fragment_sign_up"/>
     <fragment android:id="@+id/signInFragment3"
-              android:name="com.temporaryname.bastienfalcou.testnavigation.SignInFragment"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.SignInFragment"
               android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in">
         <action android:id="@+id/toHomeScreenFragment"
                 app:destination="@id/homeScreenFragment"/>
     </fragment>
     <fragment android:id="@+id/homeScreenFragment"
-              android:name="com.temporaryname.bastienfalcou.testnavigation.HomeScreenFragment"
+              android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.HomeScreenFragment"
               android:label="fragment_home_screen"
               tools:layout="@layout/fragment_home_screen">
               <argument
