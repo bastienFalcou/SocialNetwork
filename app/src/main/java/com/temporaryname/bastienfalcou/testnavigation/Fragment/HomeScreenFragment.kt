@@ -7,10 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import com.temporaryname.bastienfalcou.testnavigation.Helpers.nullIfEmpty
+import com.temporaryname.bastienfalcou.testnavigation.Helpers.show
 import com.temporaryname.bastienfalcou.testnavigation.R
 import com.temporaryname.bastienfalcou.testnavigation.ViewModel.HomeScreenFragmentModel
 import kotlinx.android.synthetic.main.fragment_home_screen.*
-import com.temporaryname.bastienfalcou.testnavigation.Helpers.show
 
 class HomeScreenFragment: Fragment() {
     private val viewModel = HomeScreenFragmentModel()
@@ -33,7 +34,7 @@ class HomeScreenFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        nameTextView.text = arguments?.getString("nameArgument") ?: "Name Unspecified"
+        nameTextView.text = arguments?.getString("nameArgument")?.nullIfEmpty() ?: "Name Unspecified"
 
         viewModel.fetchMovies()
     }
