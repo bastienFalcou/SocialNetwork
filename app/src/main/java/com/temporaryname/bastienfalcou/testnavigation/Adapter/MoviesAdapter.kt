@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 import com.temporaryname.bastienfalcou.testnavigation.R
 
-class MoviesAdapter(private val context: Context?,
+class MoviesAdapter(context: Context?,
                     private val dataSource: Array<Movie>): BaseAdapter() {
     private val inflater: LayoutInflater
             = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
