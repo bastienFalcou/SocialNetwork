@@ -17,10 +17,7 @@ class HomeScreenFragment: Fragment() {
     private val viewModel = HomeScreenFragmentModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        viewModel.moviesUpdate = {
-            val adapter = MoviesAdapter(context, it)
-            moviesList.adapter = adapter
-        }
+        viewModel.moviesUpdate = { moviesList.adapter = MoviesAdapter(context, it) }
 
         viewModel.errorReturned = { AlertDialog.Builder(context).show(it, activity) {
                 viewModel.fetchMovies()
