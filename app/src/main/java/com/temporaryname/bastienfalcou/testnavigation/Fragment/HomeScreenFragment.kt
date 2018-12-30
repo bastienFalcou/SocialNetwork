@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import com.temporaryname.bastienfalcou.testnavigation.Adapter.MoviesAdapter
 import com.temporaryname.bastienfalcou.testnavigation.Helpers.nullIfEmpty
 import com.temporaryname.bastienfalcou.testnavigation.Helpers.show
 import com.temporaryname.bastienfalcou.testnavigation.R
@@ -17,9 +17,8 @@ class HomeScreenFragment: Fragment() {
     private val viewModel = HomeScreenFragmentModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        viewModel.moviesUpdate = { movies ->
-            val listItems = movies.map { it.title }
-            val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, listItems)
+        viewModel.moviesUpdate = {
+            val adapter = MoviesAdapter(context, it)
             moviesList.adapter = adapter
         }
 
