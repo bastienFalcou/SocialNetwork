@@ -15,10 +15,12 @@
     </fragment>
     <fragment android:id="@+id/signUpFragment2"
               android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.SignUpFragment"
-              android:label="fragment_sign_up" tools:layout="@layout/fragment_sign_up"/>
+              android:label="fragment_sign_up"
+              tools:layout="@layout/fragment_sign_up"/>
     <fragment android:id="@+id/signInFragment3"
               android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.SignInFragment"
-              android:label="fragment_sign_in" tools:layout="@layout/fragment_sign_in">
+              android:label="fragment_sign_in"
+              tools:layout="@layout/fragment_sign_in">
         <action android:id="@+id/toHomeScreenFragment"
                 app:destination="@id/homeScreenFragment"/>
     </fragment>
@@ -26,15 +28,19 @@
               android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.HomeScreenFragment"
               android:label="fragment_home_screen"
               tools:layout="@layout/fragment_home_screen">
-              <argument
-                      android:name="nameArgument"
-                      android:defaultValue=" "
-                      app:type="string"
-              />
+        <argument
+                android:name="nameArgument"
+                android:defaultValue=" "
+                app:type="string"/>
         <action android:id="@+id/toMovieDetailsFragment"
                 app:destination="@id/movieDetailsFragment"/>
     </fragment>
     <fragment android:id="@+id/movieDetailsFragment"
               android:name="com.temporaryname.bastienfalcou.testnavigation.Fragment.MovieDetailsFragment"
-              android:label="fragment_movie_details" tools:layout="@layout/fragment_movie_details"/>
+              android:label="fragment_movie_details"
+              tools:layout="@layout/fragment_movie_details">
+        <argument
+                android:name="movieArgument"
+                app:type="serializable"/>
+    </fragment>
 </navigation>
