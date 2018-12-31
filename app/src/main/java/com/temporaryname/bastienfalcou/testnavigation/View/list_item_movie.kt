@@ -1,4 +1,4 @@
-package com.temporaryname.bastienfalcou.testnavigation
+package com.temporaryname.bastienfalcou.testnavigation.View
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
+import com.temporaryname.bastienfalcou.testnavigation.R
 
 /**
  * TODO: document your custom view class.

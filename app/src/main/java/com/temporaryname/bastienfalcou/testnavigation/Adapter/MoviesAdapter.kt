@@ -29,7 +29,7 @@ class MoviesAdapter(private val context: Context?,
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val rowView = inflater.inflate(R.layout.sample_list_item_movie, parent, false)
+        val rowView = inflater.inflate(R.layout.list_item_movie, parent, false)
         var movie = getItem(position) as Movie
 
         val titleTextView = rowView.findViewById(R.id.title_view) as TextView
