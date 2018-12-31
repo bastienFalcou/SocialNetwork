@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.temporaryname.bastienfalcou.testnavigation.Adapter.MoviesAdapter
-import com.temporaryname.bastienfalcou.testnavigation.Helpers.nullIfEmpty
 import com.temporaryname.bastienfalcou.testnavigation.Helpers.show
 import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 import com.temporaryname.bastienfalcou.testnavigation.R
@@ -38,7 +37,7 @@ class HomeScreenFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        nameTextView.text = arguments?.getString("nameArgument")?.nullIfEmpty() ?: "Name Unspecified"
+        nameTextView.text = arguments?.getString("nameArgument")?.takeIf { !it.isEmpty() } ?: "Name Unspecified"
 
         viewModel.fetchMovies()
     }
