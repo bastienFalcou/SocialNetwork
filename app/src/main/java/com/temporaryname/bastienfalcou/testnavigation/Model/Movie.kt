@@ -8,7 +8,7 @@ data class Movie(val id: String,
                  val owner: String,
                  val title: String,
                  val isPublic: Boolean,
-                 var urlString: String) {
+                 val url_sq: String) { // TODO: (Bastien) implement mapping names logic
     companion object {}
 
     class Deserializer: ResponseDeserializable<Array<Movie>> {
