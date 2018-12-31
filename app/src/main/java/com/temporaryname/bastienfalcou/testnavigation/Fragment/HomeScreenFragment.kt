@@ -26,6 +26,12 @@ class HomeScreenFragment: Fragment() {
             }
         }
 
+        moviesList.setOnItemClickListener { _, _, position, _ ->
+            val adapter = moviesList.adapter as MoviesAdapter
+            val movie = adapter.getItem(position) as Movie
+            showMovieDetails(movie)
+        }
+
         return inflater.inflate(R.layout.fragment_home_screen, container, false)
     }
 
