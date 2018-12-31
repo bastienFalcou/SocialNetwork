@@ -25,17 +25,17 @@ class HomeScreenFragment: Fragment() {
             }
         }
 
-        moviesList.setOnItemClickListener { _, _, position, _ ->
-            val adapter = moviesList.adapter as MoviesAdapter
-            val movie = adapter.getItem(position) as Movie
-            showMovieDetails(movie)
-        }
-
         return inflater.inflate(R.layout.fragment_home_screen, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        moviesList.setOnItemClickListener { _, _, position, _ ->
+            val adapter = moviesList.adapter as MoviesAdapter
+            val movie = adapter.getItem(position) as Movie
+            showMovieDetails(movie)
+        }
 
         nameTextView.text = arguments?.getString("nameArgument")?.takeIf { !it.isEmpty() } ?: "Name Unspecified"
 
