@@ -31,7 +31,7 @@ class MovieDetailsFragment: Fragment() {
         val movie = viewModel.movie
         if (movie != null) {
             Picasso.get()
-                .load(movie.url_sq)
+                .load(movie.imageUrl)
                 .placeholder(R.mipmap.ic_launcher)
                 .into(imageView)
         }
