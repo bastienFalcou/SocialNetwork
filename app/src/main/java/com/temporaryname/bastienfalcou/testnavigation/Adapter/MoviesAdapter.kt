@@ -11,8 +11,7 @@ import com.squareup.picasso.Picasso
 import com.temporaryname.bastienfalcou.testnavigation.Model.Movie
 import com.temporaryname.bastienfalcou.testnavigation.R
 
-class MoviesAdapter(private val context: Context?,
-                    private val dataSource: Array<Movie>): BaseAdapter() {
+class MoviesAdapter(context: Context?, private val dataSource: Array<Movie>): BaseAdapter() {
     private val inflater: LayoutInflater
             = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
@@ -37,7 +36,7 @@ class MoviesAdapter(private val context: Context?,
 
         val imageView = rowView.findViewById(R.id.image_view) as ImageView
         Picasso.get()
-            .load(movie.url_sq)
+            .load(movie.imageUrl)
             .resize(200, 200)
             .placeholder(R.mipmap.ic_launcher)
             .into(imageView)

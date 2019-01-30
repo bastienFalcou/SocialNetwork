@@ -27,12 +27,11 @@ class MovieDetailsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         titleTextView.text = viewModel.movie?.title
-        
+
         val movie = viewModel.movie
         if (movie != null) {
             Picasso.get()
-                .load(movie.url_sq)
-                .resize(200, 200)
+                .load(movie.imageUrl)
                 .placeholder(R.mipmap.ic_launcher)
                 .into(imageView)
         }
