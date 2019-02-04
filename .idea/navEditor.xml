@@ -19,6 +19,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_homeScreenFragment_to_map">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="toMovieDetailsFragment">
                               <value>
                                 <LayoutPositions />
@@ -55,13 +60,25 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="map">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="785" />
+                            <option name="y" value="572" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="movieDetailsFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="766" />
-                            <option name="y" value="368" />
+                            <option name="x" value="785" />
+                            <option name="y" value="221" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -37,6 +37,10 @@ class HomeScreenFragment: Fragment() {
             showMovieDetails(movie)
         }
 
+        openMapButton.setOnClickListener {
+            findNavController().navigate(R.id.toMapFragment)
+        }
+
         nameTextView.text = arguments?.getString("nameArgument")?.takeIf { !it.isEmpty() } ?: "Name Unspecified"
 
         viewModel.fetchMovies()
